@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+      * {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ui-dialog {
+    background-color: #e6f2ff; /* Light blue background for dialog */
+    border: 1px solid #3385ff; /* Dark blue border */
+    color: #333; /* Text color */
+}
+
+.ui-dialog-titlebar {
+    background-color: #3385ff; /* Dark blue for title bar */
+    color: #ffffff; /* White text in title bar */
+    font-weight: bold;
+}
+
+/* Hide the close button in the title bar */
+.ui-dialog-titlebar-close {
+    display: none;
+}
+
+#progressbar {
+    margin-top: 20px;
+    background-color: #ffffff; /* White background for the progress bar container */
+    border: 1px solid #3385ff; /* Dark blue border */
+    height: 20px;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.ui-progressbar-value {
+    background-color: #66b3ff; /* Light blue for the filled portion */
+    border-radius: 5px; /* Rounded corners for smooth filling */
+}
+
+.progress-label {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #ffffff; /* White shadow for text */
+    color: #3385ff; /* Dark blue color for text */
+}
+
+button, .ui-dialog button {
+    background-color: #66b3ff; /* Light blue background for buttons */
+    color: #ffffff; /* White text for contrast */
+    border: 1px solid #3385ff; /* Dark blue border */
+    padding: 0.4em 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners for a softer look */
+}
+button:hover, .ui-dialog button:hover {
+    background-color: #3385ff; /* Darker blue on hover */
+}
+button:active, .ui-dialog button:active {
+    background-color: #1a5fb4; /* Even darker blue when active */
+}
+
+/* Background styling for the whole page */
+body {
+    background: linear-gradient(to bottom right, #e6f7ff, #b3d1ff); /* Light blue to white gradient */
+    align-content: center;
+}
+</style>
+
+  
+    
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html" style="color:  rgb(22, 19, 3);">WIDGETS</a> 
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html" style="color: rgb(22, 19, 3);">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>PROGRESS BAR</u></h1>
+            <div id="dialog" title="File Download">
+                <div class="progress-label">Starting download...</div>
+                <div id="progressbar"></div>
+              </div>
+              <button id="downloadButton">Start Download</button>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+  
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          var progressTimer,
+            progressbar = $( "#progressbar" ),
+            progressLabel = $( ".progress-label" ),
+            dialogButtons = [{
+              text: "Cancel Download",
+              click: closeDownload
+            }],
+            dialog = $( "#dialog" ).dialog({
+              autoOpen: false,
+              closeOnEscape: false,
+              resizable: false,
+              buttons: dialogButtons,
+              open: function() {
+                progressTimer = setTimeout( progress, 2000 );
+              },
+              beforeClose: function() {
+                downloadButton.button( "option", {
+                  disabled: false,
+                  label: "Start Download"
+                });
+              }
+            }),
+            downloadButton = $( "#downloadButton" )
+              .button()
+              .on( "click", function() {
+                $( this ).button( "option", {
+                  disabled: true,
+                  label: "Downloading..."
+                });
+                dialog.dialog( "open" );
+              });
+       
+          progressbar.progressbar({
+            value: false,
+            change: function() {
+              progressLabel.text( "Current Progress: " + progressbar.progressbar( "value" ) + "%" );
+            },
+            complete: function() {
+              progressLabel.text( "Complete!" );
+              dialog.dialog( "option", "buttons", [{
+                text: "Close",
+                click: closeDownload
+              }]);
+              $(".ui-dialog button").last().trigger( "focus" );
+            }
+          });
+       
+          function progress() {
+            var val = progressbar.progressbar( "value" ) || 0;
+       
+            progressbar.progressbar( "value", val + Math.floor( Math.random() * 3 ) );
+       
+            if ( val <= 99 ) {
+              progressTimer = setTimeout( progress, 50 );
+            }
+          }
+       
+          function closeDownload() {
+            clearTimeout( progressTimer );
+            dialog
+              .dialog( "option", "buttons", dialogButtons )
+              .dialog( "close" );
+            progressbar.progressbar( "value", false );
+            progressLabel
+              .text( "Starting download..." );
+            downloadButton.trigger( "focus" );
+          }
+        } );
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <style>
+        label {
+          display: inline-block; width: 5em;
+        }
+        fieldset div {
+          margin-bottom: 2em;
+        }
+        fieldset .help {
+          display: inline-block;
+        }
+        .ui-tooltip {
+          width: 210px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html" style="color: rgb(22, 19, 3);">WIDGETS</a> 
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html" style="color: rgb(22, 19, 3);">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>TOOL TIP</u></h1>
+            <form>
+              <fieldset>
+                <div>
+                  <label for="firstname">Firstname</label>
+                  <input id="firstname" name="firstname" title="Please provide your firstname.">
+                </div>
+                <div>
+                  <label for="lastname">Lastname</label>
+                  <input id="lastname" name="lastname" title="Please provide also your lastname.">
+                </div>
+                <div>
+                  <label for="address">Address</label>
+                  <input id="address" name="address" title="Your home or work address.">
+                </div>
+              </fieldset>
+              
+            </form>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+  </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+      $( function() {
+    var tooltips = $( "[title]" ).tooltip({
+      position: {
+        my: "left top",
+        at: "right+5 top-5",
+        collision: "none"
+      }
+    });
+    $( "<button>" )
+      .text( "Show help" )
+      .button()
+      .on( "click", function() {
+        tooltips.tooltip( "open" );
+      })
+      .insertAfter( "form" );
+  } );
+  </script>
+</body>
+</html>

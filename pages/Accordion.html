@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+      #accordion h3 {
+        background-color: initial; 
+        color: black; 
+        margin-right: 50px;
+      }
+      #accordion div {
+        margin-right: 50px;
+      }
+      #accordion .ui-state-active {
+        background-color: rgb(10, 46, 100);
+        color: white;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+</head>
+<body>
+    <header>
+      <div>
+        <h1>JQUERY SESSION</h1>
+      </div>
+      <div class="container">
+          <a href="../index.html" style="color: rgb(22, 19, 3);">WIDGETS</a> 
+      </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html" style="color: rgb(22, 19, 3);">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>ACCORDION</u></h1>
+            <div id="accordion">
+                <h3>Perspective 1</h3>
+                <div>
+                  <p>
+                    "The ocean is a vast ecosystem teeming with life that we are 
+                    only beginning to understand. From the tiniest plankton to the 
+                    largest whales, every organism plays a crucial role in maintaining 
+                    balance. The ocean provides oxygen, absorbs carbon dioxide, and 
+                    regulates our climate, making it an essential part of Earth's 
+                    ecosystem. Yet, human activity is putting this fragile environment 
+                    at risk. Pollution, overfishing, and climate change are threatening 
+                    species and habitats at an alarming rate, underscoring the urgency 
+                    for conservation and sustainable practices."
+                  </p>
+                </div>
+                <h3>Perspective 2</h3>
+                <div>
+                  <p>
+                    "For me, the ocean is more than just a resource—it’s my livelihood. 
+                    Every morning, I head out with my boat, hoping for a good catch to 
+                    provide for my family and my community. But the waters are changing; 
+                    fish stocks are not what they used to be, and I see more plastic and 
+                    pollution than ever. The ocean gives us so much, and we need to respect 
+                    it if we want it to keep giving back. Finding a balance between making a 
+                    living and protecting the ocean is something we all have to work on together."
+                  </p>
+                </div>
+                <h3>Perspective 3</h3>
+                <div>
+                  <p>
+                    "The ocean is a beautiful yet endangered part of our planet, a lifeline for 
+                    so many people, animals, and plants. It’s frustrating to see how pollution, 
+                    plastic waste, and chemical runoff have become such prominent issues, choking 
+                    marine life and destroying ecosystems. Our planet relies on the health of our 
+                    oceans, and we need to take serious action to reduce pollution and address 
+                    climate change. Everyone has a role to play—whether by reducing plastic use 
+                    or supporting clean-up efforts, we all need to be involved in protecting this 
+                    precious resource."
+              
+                  </p>
+                  <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                  </ul>
+                </div>
+                <h3>Perspective 4</h3>
+                <div>
+                  <p>
+                    "The ocean is my playground and my escape. There’s nothing 
+                    like the thrill of catching a wave and feeling connected to 
+                    the powerful force of the sea. But I’ve noticed the change 
+                    too—plastic debris floating in the water and strange algae 
+                    blooms that weren’t here when I started surfing. It’s 
+                    heartbreaking to see the ocean suffer, especially when it 
+                    brings so much joy and peace to people like me. I try to do 
+                    my part by keeping beaches clean and spreading awareness among 
+                    my friends because the ocean deserves our respect and care."
+                  </p>
+                </div>
+              </div>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+  
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#accordion" ).accordion();
+        });
+    </script>
+</body>
+</html>

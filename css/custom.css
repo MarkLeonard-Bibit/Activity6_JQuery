@@ -1,0 +1,85 @@
+header {
+    background: linear-gradient(to bottom, #a0c4ff, #003566); /* Light blue to dark blue */
+    color: #ffffff; /* White text */
+    text-align: center;
+    padding: 20px;
+    border: solid 1px #cfe2ff; /* Lighter blue border */
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(to bottom, #e6f2ff, #99ccff); /* Very light blue to light blue */
+}
+
+.container a {
+    color: #003566; /* Dark blue */
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container a:hover {
+    color: #ffffff; /* White on hover */
+    padding: 3px;
+}
+
+nav {
+    background: linear-gradient(to bottom, #00509e, #003566); /* Darker blue to dark blue */
+    float: left;
+    width: 20%;
+    height: 600px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #ffffff; /* White */
+    font-size: 15px;
+}
+
+nav ul a:hover {
+    color: #a0c4ff; /* Light blue on hover */
+}
+
+article {
+    background: linear-gradient(to bottom, #99ccff, #cfe2ff); /* Light blue to lighter blue */
+    float: left;
+    color: #003566; /* Dark blue */
+    width: 75%;
+    height: 600px;
+    padding-left: 5%;
+}
+
+footer, #foot {
+    text-align: center;
+    background: linear-gradient(to bottom, #a0c4ff, #003566); /* Light blue to dark blue */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    font-size: 15px;
+    border-top: solid 1px #cfe2ff; /* Lighter blue border */
+}  
+
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer, #foot {
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom, #00509e, #003566); /* Dark blue gradient */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    font-size: 15px;
+    border-top: solid 1px #cfe2ff; /* Lighter blue border */
+}  
