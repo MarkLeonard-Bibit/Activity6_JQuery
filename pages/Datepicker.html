@@ -47,10 +47,10 @@
 <body>
     <header>
         <div>
-            <h1>JQUERY SESSION</h1>
+            <h1>JQUERY SESSION-MarkLeonard</h1>
         </div>
         <div class="container">
-            <a href="../index.html" style="color:  rgb(22, 19, 3);">WIDGETS</a> 
+            <a href="../index.html" style="color: gold;">WIDGETS</a> 
         </div>
     </header>
     <section>
@@ -61,7 +61,7 @@
             <ul><li><a href="Button.html">BUTTON</a></li></ul>
             <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
             <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
-            <ul><li><a href="Datepicker.html" style="color: rgb(22, 19, 3);">DATE PICKER</a></li></ul>
+            <ul><li><a href="Datepicker.html" style="color: gold;">DATE PICKER</a></li></ul>
             <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
             <ul><li><a href="Menu.html">MENU</a></li></ul>
             <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
@@ -73,7 +73,7 @@
         </nav>
         <article>
             <h1><u>DATE PICKER</u></h1>
-            <p>Date: <input type="text" id="datepicker"></p>
+            Date: <div id="datepicker"></div>
         </article>
     </section>
     <footer id="foot">
@@ -83,21 +83,9 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
     <script>
-        $( function() {
-          $( "#datepicker" ).datepicker();
-        } );
-        $("#datepicker").on("change", function() {
-            // Get the selected date
-            let selectedDate = $(this).val();
-            
-            // Display the selected date in the article section
-            document.querySelector("article").innerHTML += `
-                <div>
-                    <h2>Selected Date</h2>
-                    <p>Date: ${selectedDate}</p>
-                </div>
-            `;
-        });
-    </script>
+         $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
 </body>
 </html>
